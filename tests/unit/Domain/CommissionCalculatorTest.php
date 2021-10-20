@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace unit\Domain;
 
-use App\Domain\Commission\CommissionCalculator;
+use App\Domain\Commission\DefaultCommissionCalculator;
 use App\Domain\Commission\CommissionCalculatorInput;
 use App\Domain\Transaction\BinIssuedType;
 use Decimal\Decimal;
@@ -12,13 +12,13 @@ use PHPUnit\Framework\TestCase;
 
 final class CommissionCalculatorTest extends TestCase
 {
-    private CommissionCalculator $it;
+    private DefaultCommissionCalculator $it;
 
     protected function setUp(): void
     {
         parent::setUp();
 
-        $this->it = new CommissionCalculator(
+        $this->it = new DefaultCommissionCalculator(
             'EUR',
             new Decimal('0.01'),
             new Decimal('0.02'),

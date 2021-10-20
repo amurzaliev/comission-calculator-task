@@ -3,8 +3,9 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Transaction;
 
+use App\Domain\Transaction\Exception\TransactionsFileReadFailed;
 use App\Domain\Transaction\Transaction;
-use App\Infrastructure\Transaction\Exception\TransactionsFileReadFailed;
+use App\Domain\Transaction\TransactionsFileReader;
 use Decimal\Decimal;
 use Throwable;
 
@@ -26,7 +27,7 @@ final class TxtTransactionsFileReader implements TransactionsFileReader
                 );
             }
         } catch (Throwable $throwable) {
-            throw new TransactionsFileReadFailed(sprintf('Error has occurred while reading %s file.', $filepath), null, $throwable);
+            throw new TransactionsFileReadFailed(sprintf('Error has occurred while reading %s file.', $filepath), 0, $throwable);
         }
     }
 }

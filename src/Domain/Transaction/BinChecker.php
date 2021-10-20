@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Infrastructure\Bin;
+namespace App\Domain\Transaction;
 
-use App\Infrastructure\Bin\Exception\CheckBinFailed;
+use App\Domain\Transaction\Exception\CheckBinFailed;
 
 interface BinChecker
 {

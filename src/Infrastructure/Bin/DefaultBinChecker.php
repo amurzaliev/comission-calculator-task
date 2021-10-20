@@ -3,7 +3,8 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Bin;
 
-use App\Infrastructure\Bin\Exception\CheckBinFailed;
+use App\Domain\Transaction\BinChecker;
+use App\Domain\Transaction\Exception\CheckBinFailed;
 use Throwable;
 
 final class DefaultBinChecker implements BinChecker
@@ -27,7 +28,7 @@ final class DefaultBinChecker implements BinChecker
             $data = json_decode($result);
             return $data->country->alpha2;
         } catch (Throwable $throwable) {
-            throw new CheckBinFailed(sprintf('Parsing %s response failed.', $this->url), null, $throwable);
+            throw new CheckBinFailed(sprintf('Parsing %s response failed.', $this->url), 0, $throwable);
         }
     }
 }

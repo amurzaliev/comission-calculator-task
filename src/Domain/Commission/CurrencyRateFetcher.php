@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Infrastructure\CurrencyRate;
+namespace App\Domain\Commission;
 
 use Decimal\Decimal;
 

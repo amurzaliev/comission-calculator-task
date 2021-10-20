@@ -1,9 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Infrastructure\Transaction;
-
-use App\Domain\Transaction\Transaction;
+namespace App\Domain\Transaction;
 
 interface TransactionsFileReader
 {

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Infrastructure\Bin\Exception;
+namespace App\Domain\Transaction\Exception;
 
 use RuntimeException;
 

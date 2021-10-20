@@ -15,7 +15,6 @@ final class CalculateCommissionsByFile
     public static function create(string $filepath): self
     {
         assert(pathinfo($filepath, PATHINFO_EXTENSION) === 'txt', 'File has invalid extension.');
-        assert(is_file($filepath), 'File does not exist.');
 
         return new self($filepath);
     }

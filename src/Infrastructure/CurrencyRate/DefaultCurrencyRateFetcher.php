@@ -3,7 +3,8 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\CurrencyRate;
 
-use App\Infrastructure\CurrencyRate\Exception\FetchCurrencyRateFailed;
+use App\Domain\Commission\CurrencyRateFetcher;
+use App\Domain\Commission\Exception\FetchCurrencyRateFailed;
 use Decimal\Decimal;
 use Throwable;
 
@@ -30,7 +31,7 @@ final class DefaultCurrencyRateFetcher implements CurrencyRateFetcher
             $data = json_decode($result);
             return new Decimal((string) $data->rates->{$currency}); // data is stored in float format, which leeds to losing precision
         } catch (Throwable $throwable) {
-            throw new FetchCurrencyRateFailed(sprintf('Parsing %s response failed.', $this->url), null, $throwable);
+            throw new FetchCurrencyRateFailed(sprintf('Parsing %s response failed.', $this->url), 0, $throwable);
         }
     }
 }

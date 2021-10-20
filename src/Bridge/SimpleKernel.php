@@ -5,7 +5,7 @@ namespace App\Bridge;
 
 use App\Application\CalculateCommissionsByFileService;
 use App\Bridge\Controller\Console\CommissionsController;
-use App\Bridge\Service\CommissionCalculatorFactory;
+use App\Bridge\Service\DefaultCommissionCalculatorFactory;
 use App\Bridge\Service\DefaultBinCheckerFactory;
 use App\Bridge\Service\DefaultCurrencyRateFetcherFactory;
 use App\Infrastructure\Transaction\TxtTransactionsFileReader;
@@ -29,7 +29,7 @@ final class SimpleKernel
         $config = $this->simpleConfig();
         $this->container['config'] = $config;
 
-        $commissionCalculator = (new CommissionCalculatorFactory())->create($this->container);
+        $commissionCalculator = (new DefaultCommissionCalculatorFactory())->create($this->container);
         $fileReader = new TxtTransactionsFileReader();
         $binChecker = (new DefaultBinCheckerFactory())->create($this->container);
         $currencyRateFetcher = (new DefaultCurrencyRateFetcherFactory())->create($this->container);
