@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Bridge\Service;
 
-use App\Infrastructure\Bin\DefaultBinChecker;
+use App\Infrastructure\Transaction\DefaultBinChecker;
 
 final class DefaultBinCheckerFactory implements Factory
 {

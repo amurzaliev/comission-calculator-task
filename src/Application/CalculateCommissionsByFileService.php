@@ -7,7 +7,7 @@ use App\Application\Dto\Calculation;
 use App\Application\Exception\CalculateCommissionsFailed;
 use App\Domain\Commission\CommissionCalculator;
 use App\Domain\Commission\CommissionCalculatorInput;
-use App\Domain\Commission\CurrencyRateFetcher;
+use App\Domain\CurrencyRate\CurrencyRateFetcher;
 use App\Domain\Transaction\BinChecker;
 use App\Domain\Transaction\BinIssuedType;
 use App\Domain\Transaction\TransactionsFileReader;

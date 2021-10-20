@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Domain\Commission\Exception;
+namespace App\Domain\CurrencyRate\Exception;
 
 use RuntimeException;
 

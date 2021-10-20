@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Infrastructure\Bin;
+namespace App\Infrastructure\Transaction;
 
 use App\Domain\Transaction\BinChecker;
 use App\Domain\Transaction\Exception\CheckBinFailed;

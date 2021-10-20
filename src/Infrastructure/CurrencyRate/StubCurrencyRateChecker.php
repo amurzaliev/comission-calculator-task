@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\CurrencyRate;
 
-use App\Domain\Commission\CurrencyRateFetcher;
+use App\Domain\CurrencyRate\CurrencyRateFetcher;
 use Decimal\Decimal;
 
 final class StubCurrencyRateChecker implements CurrencyRateFetcher
